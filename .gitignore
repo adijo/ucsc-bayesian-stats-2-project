@@ -40,3 +40,6 @@ vignettes/*.pdf
 
 # Mac 
 .DS_Store
+
+# Idea
+.idea
