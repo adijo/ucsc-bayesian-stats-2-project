@@ -39,6 +39,19 @@ get.cervical.data = function(data_dir) {
   
   cervical_impute = mlr::impute(cervical, classes = list(numeric = imputeMode()))
   cervical = cervical_impute$data
+  
+  
+  # Factor variables: Smokes, IUD, STDs, Hormonal.Contraceptives
+  cervical$Smokes = factor(cervical$Smokes, levels = c(0, 1), labels=c("Smoker", "Non Smoker"))
+  cervical$STDs = factor(cervical$STDs, levels=c(0, 1), labels=c("Has STDs", "No STDs"))
+  cervical$IUD = factor(cervical$IUD, levels = c(0, 1), labels=c("Has IUD", "No IUD"))
+  cervical$Hormonal.Contraceptives = factor(cervical$Hormonal.Contraceptives, levels = c(0, 1), labels=c("Contraceptives", "No Contraceptives"))
+  cervical <- setNames(
+    cervical, 
+    c("age", "num_sexual_partners", "first_sexual_intercourse", "num_pregnancies",
+      "smokes", "smokes_yrs", "hormonal_contraceptives", "hormonal_contraceptives_yrs",
+      "iud", "iud_yrs", "stds", "num_stds", "num_stds_diag", "first_time_std_diag",
+      "last_time_std_diag", "biopsy"))
   cervical
 }
 
