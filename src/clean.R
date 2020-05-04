@@ -37,7 +37,7 @@ get.cervical.data = function(data_dir) {
   imputer = mlr::imputeMode()
   
   
-  cervical_impute = mlr::impute(cervical, classes = list(numeric = imputeMode()))
+  cervical_impute = mlr::impute(cervical, classes = list(numeric = imputer))
   cervical = cervical_impute$data
   
   
