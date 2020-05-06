@@ -2,7 +2,7 @@ library("ggplot2")
 library("ggthemr")
 ggthemr("fresh")
 source("src/clean.R")
-source("src/utils.R")
+
 
 df = get.titanic.data()
 

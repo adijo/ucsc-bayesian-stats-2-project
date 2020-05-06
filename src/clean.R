@@ -1,10 +1,8 @@
-library("titanic")
-library("tidyr")
 
 get.titanic.data = function() {
   
   # Drop unimportant columns (for now)
-  df <- subset(titanic_train, select = -c(PassengerId, Name, Cabin, Fare, Ticket))
+  df <- subset(titanic::titanic_train, select = -c(PassengerId, Name, Cabin, Fare, Ticket))
  
    # Omit NA's
   df = na.omit(df, target.colnames = c("Age", "Embarked"))
