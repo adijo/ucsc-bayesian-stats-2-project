@@ -11,7 +11,7 @@ get.titanic.data = function() {
   df$Survived = factor(df$Survived, levels = c(0, 1), labels = c("Survived", "Dead"))
   df$Sex = factor(df$Sex, levels = c("male", "female"), labels = c("Male", "Female"))
   df$Embarked = factor(df$Embarked, levels = c("S", "C", "Q"), labels = c("Southampton", "Cherbourg", "Queenstown"))
-  df$Pclass = factor(df$Pclass, levels = c(1, 2, 3), labels = c("First", "Second", "Third"))
+  df$Pclass = factor(df$Pclass, levels = c(1, 2, 3), labels = c("1st Class", "2nd Class", "3rd Class"))
  
   na.omit(df)
 }
